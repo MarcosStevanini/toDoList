@@ -52,8 +52,9 @@ export default function home() {
       setChangeText("");
       return;
     }
-    
-    setTasks((prevTasks) => [...prevTasks, changeText]);
+
+    Alert.alert('Deseja cadastrar', `${changeText}?`, [{text: 'Cadastrar', style: 'cancel', onPress: () => setTasks(prevTasks => [...prevTasks, changeText])}, {text: "Não", style:'destructive'}])
+
     setCreateValue(valueTasks);
     setChangeText("");
   };
@@ -98,7 +99,6 @@ export default function home() {
           onChangeText={(value) => setChangeText(value)}
           value={changeText}
         />
-        {/* <AddButton onPress={Alert.alert('Deseja cadastrar', `${changeText}?`, [{text: 'Cadastrar', style: 'cancel', onPress: addTasks}, {text: "Não", style:'destructive'}])}> */}
         <AddButton onPress={addTasks}>
           <AntDesign name="pluscircleo" size={24} color="white" />
         </AddButton>
