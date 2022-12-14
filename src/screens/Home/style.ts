@@ -16,9 +16,19 @@ interface topBar extends imgLogoProps {
   flex?: number;
 }
 
+export const View = styled.View`
+  flex-direction: row;
+`;
+
 export const Container = styled.View<Container>`
   background-color: ${({ background }) => background};
   flex: ${({ flex }) => flex};
+`;
+
+export const ContainerTasks = styled.View`
+  justify-content: center;
+  align-items: center;
+  height: 400px;
 `;
 
 export const ImageLogo = styled.Image<imgLogoProps>`
@@ -61,4 +71,22 @@ export const Tasks = styled.View``;
 
 export const List = styled.FlatList``;
 
-export const Text = styled.Text``;
+export const Text = styled.Text`
+  color: #808080;
+  font-weight: bold;
+  font-size: 16px;
+`;
+export const SubText = styled.Text`
+  color: #808080;
+`;
+
+export const Img = styled.Image`
+  margin-bottom: 40px;
+`;
+
+export const Success = styled.View`
+  padding: 0 15px;
+  margin-top: 20px;
+  flex-direction: row;
+  justify-content: space-between
+`;
